@@ -2,8 +2,8 @@ $grid-size: 1200px;
 $gutter-size: 10px;
 
 $breakpoint-phone: 320;
-$breakpoint-phone-tablet: 480;
-$breakpoint-tablet-desktop: 720;
+$breakpoint-tablet: 480;
+$breakpoint-desktop: 720;
 
 /**
 Progressive enhancement mixin designed to
@@ -13,6 +13,67 @@ size.
 @mixin minwidth($minw) {
   @media (min-width: ($minw/16+em)) {
     @content;
+  }
+}
+
+/**
+Mixin designed for setting columns
+at different breakpoints
+*/
+@mixin columns {
+  /**
+  one column layout
+  */
+  &1 {
+    *[class^="flex"] {
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+    }
+  }
+  /**
+  two column layout
+  */
+  &2 {
+    *[class^="flex"] {
+      -ms-flex-preferred-size: calc(50% - (2 * #{$gutter-size}));
+      flex-basis: calc(50% - (2 * #{$gutter-size}));
+    }
+  }
+  /**
+  three column layout
+  */
+  &3 {
+    *[class^="flex"] {
+      -ms-flex-preferred-size: calc(33.33% - (2 * #{$gutter-size}));
+      flex-basis: calc(33.33% - (2 * #{$gutter-size}));
+    }
+  }
+  /**
+  four column layout
+  */
+  &4 {
+    *[class^="flex"] {
+      -ms-flex-preferred-size: calc(25% - (2 * #{$gutter-size}));
+      flex-basis: calc(25% - (2 * #{$gutter-size}));
+    }
+  }
+  /**
+  5 column layout
+  */
+  &5 {
+    *[class^="flex"] {
+      -ms-flex-preferred-size: calc(20% - (2 * #{$gutter-size}));
+      flex-basis: calc(20% - (2 * #{$gutter-size}));
+    }
+  }
+  /**
+  6 column layout
+  */
+  &6 {
+    *[class^="flex"] {
+      -ms-flex-preferred-size: calc(16.67% - (2 * #{gutter-size}));
+      flex-basis: calc(16.66% - (2 * #{$gutter-size}));
+    }
   }
 }
 
@@ -82,76 +143,32 @@ Account for margin when specifying width.
   set to border-box
   */
   &.column- {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+
     /**
-    one column layout
+    columns for phone breakpoint
     */
-    &1 {
-      *[class^="flex"] {
-        -webkit-box-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    &phone- {
+      @include minwidth($breakpoint-phone) {
+        @include columns;
       }
     }
     /**
-    two column layout
+    columns for tablet breakpoint
     */
-    &2 {
-      *[class^="flex"] {
-        -webkit-box-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        -ms-flex-preferred-size: calc(50% - (2 * #{$gutter-size}));
-        flex-basis: calc(50% - (2 * #{$gutter-size}));
+    &tablet- {
+      @include minwidth($breakpoint-tablet) {
+        @include columns;
       }
     }
     /**
-    three column layout
+    columns for desktop breakpoint
     */
-    &3 {
-      *[class^="flex"] {
-        -webkit-box-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        -ms-flex-preferred-size: calc(33.33% - (2 * #{$gutter-size}));
-        flex-basis: calc(33.33% - (2 * #{$gutter-size}));
-      }
-    }
-    /**
-    four column layout
-    */
-    &4 {
-      *[class^="flex"] {
-        -webkit-box-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        -ms-flex-preferred-size: calc(25% - (2 * #{$gutter-size}));
-        flex-basis: calc(25% - (2 * #{$gutter-size}));
-      }
-    }
-    /**
-    5 column layout
-    */
-    &5 {
-      *[class^="flex"] {
-        -webkit-box-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        -ms-flex-preferred-size: calc(20% - (2 * #{$gutter-size}));
-        flex-basis: calc(20% - (2 * #{$gutter-size}));
-      }
-    }
-    /**
-    6 column layout
-    */
-    &6 {
-      *[class^="flex"] {
-        -webkit-box-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-        -ms-flex-preferred-size: calc(16.67% - (2 * #{gutter-size}));
-        flex-basis: calc(16.66% - (2 * #{$gutter-size}));
+    &desktop- {
+      @include minwidth($breakpoint-desktop) {
+        @include columns;
       }
     }
   }
