@@ -11,7 +11,7 @@ creation
   one column layout
   */
   &-1 {
-    *[class^="flex"] {
+    *[class^="grid__item"] {
       -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
     }
@@ -22,7 +22,7 @@ creation
   two column layout
   */
   &-2 {
-    *[class^="flex"] {
+    *[class^="grid__item"] {
       -ms-flex-preferred-size: calc(50% - (2 * #{$gutter-size}));
       flex-basis: calc(50% - (2 * #{$gutter-size}));
     }
@@ -33,7 +33,7 @@ creation
   three column layout
   */
   &-3 {
-    *[class^="flex"] {
+    *[class^="grid__item"] {
       -ms-flex-preferred-size: calc(33.33% - (2 * #{$gutter-size}));
       flex-basis: calc(33.33% - (2 * #{$gutter-size}));
     }
@@ -44,7 +44,7 @@ creation
   four column layout
   */
   &-4 {
-    *[class^="flex"] {
+    *[class^="grid__item"] {
       -ms-flex-preferred-size: calc(25% - (2 * #{$gutter-size}));
       flex-basis: calc(25% - (2 * #{$gutter-size}));
     }
@@ -55,7 +55,7 @@ creation
   five column layout
   */
   &-5 {
-    *[class^="flex"] {
+    *[class^="grid__item"] {
       -ms-flex-preferred-size: calc(20% - (2 * #{$gutter-size}));
       flex-basis: calc(20% - (2 * #{$gutter-size}));
     }
@@ -66,7 +66,7 @@ creation
   six column layout
   */
   &-6 {
-    *[class^="flex"] {
+    *[class^="grid__item"] {
       -ms-flex-preferred-size: calc(16.66% - (2 * #{$gutter-size}));
       flex-basis: calc(16.66% - (2 * #{$gutter-size}));
     }
