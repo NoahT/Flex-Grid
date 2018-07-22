@@ -1,0 +1,35 @@
+/**
+BEM mixin used for elements
+*/
+@mixin element($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+/**
+BEM mixin used for modifiers
+*/
+@mixin modifier($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+/**
+Progressive enhancement mixin designed to
+target devices greater than the specified
+size.
+*/
+@mixin minwidth($minw) {
+  @media (min-width: ($minw/16+em)) {
+    @content;
+  }
+}
+
+
+
+
+
+
+
