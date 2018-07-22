@@ -92,22 +92,22 @@ grid class used as block
         .grid__column--[phone,tablet,desktop]-6
         six column layout
         */ }
-        .grid__column--phone-1 *[class^="flex"] {
+        .grid__column--phone-1 *[class^="grid__item"] {
           -ms-flex-preferred-size: 100%;
           flex-basis: 100%; }
-        .grid__column--phone-2 *[class^="flex"] {
+        .grid__column--phone-2 *[class^="grid__item"] {
           -ms-flex-preferred-size: calc(50% - (2 * 10px));
           flex-basis: calc(50% - (2 * 10px)); }
-        .grid__column--phone-3 *[class^="flex"] {
+        .grid__column--phone-3 *[class^="grid__item"] {
           -ms-flex-preferred-size: calc(33.33% - (2 * 10px));
           flex-basis: calc(33.33% - (2 * 10px)); }
-        .grid__column--phone-4 *[class^="flex"] {
+        .grid__column--phone-4 *[class^="grid__item"] {
           -ms-flex-preferred-size: calc(25% - (2 * 10px));
           flex-basis: calc(25% - (2 * 10px)); }
-        .grid__column--phone-5 *[class^="flex"] {
+        .grid__column--phone-5 *[class^="grid__item"] {
           -ms-flex-preferred-size: calc(20% - (2 * 10px));
           flex-basis: calc(20% - (2 * 10px)); }
-        .grid__column--phone-6 *[class^="flex"] {
+        .grid__column--phone-6 *[class^="grid__item"] {
           -ms-flex-preferred-size: calc(16.66% - (2 * 10px));
           flex-basis: calc(16.66% - (2 * 10px)); } }
     @media (min-width: 30em) {
@@ -136,22 +136,22 @@ grid class used as block
         .grid__column--[phone,tablet,desktop]-6
         six column layout
         */ }
-        .grid__column--tablet-1 *[class^="flex"] {
+        .grid__column--tablet-1 *[class^="grid__item"] {
           -ms-flex-preferred-size: 100%;
           flex-basis: 100%; }
-        .grid__column--tablet-2 *[class^="flex"] {
+        .grid__column--tablet-2 *[class^="grid__item"] {
           -ms-flex-preferred-size: calc(50% - (2 * 10px));
           flex-basis: calc(50% - (2 * 10px)); }
-        .grid__column--tablet-3 *[class^="flex"] {
+        .grid__column--tablet-3 *[class^="grid__item"] {
           -ms-flex-preferred-size: calc(33.33% - (2 * 10px));
           flex-basis: calc(33.33% - (2 * 10px)); }
-        .grid__column--tablet-4 *[class^="flex"] {
+        .grid__column--tablet-4 *[class^="grid__item"] {
           -ms-flex-preferred-size: calc(25% - (2 * 10px));
           flex-basis: calc(25% - (2 * 10px)); }
-        .grid__column--tablet-5 *[class^="flex"] {
+        .grid__column--tablet-5 *[class^="grid__item"] {
           -ms-flex-preferred-size: calc(20% - (2 * 10px));
           flex-basis: calc(20% - (2 * 10px)); }
-        .grid__column--tablet-6 *[class^="flex"] {
+        .grid__column--tablet-6 *[class^="grid__item"] {
           -ms-flex-preferred-size: calc(16.66% - (2 * 10px));
           flex-basis: calc(16.66% - (2 * 10px)); } }
     @media (min-width: 45em) {
@@ -180,22 +180,22 @@ grid class used as block
         .grid__column--[phone,tablet,desktop]-6
         six column layout
         */ }
-        .grid__column--desktop-1 *[class^="flex"] {
+        .grid__column--desktop-1 *[class^="grid__item"] {
           -ms-flex-preferred-size: 100%;
           flex-basis: 100%; }
-        .grid__column--desktop-2 *[class^="flex"] {
+        .grid__column--desktop-2 *[class^="grid__item"] {
           -ms-flex-preferred-size: calc(50% - (2 * 10px));
           flex-basis: calc(50% - (2 * 10px)); }
-        .grid__column--desktop-3 *[class^="flex"] {
+        .grid__column--desktop-3 *[class^="grid__item"] {
           -ms-flex-preferred-size: calc(33.33% - (2 * 10px));
           flex-basis: calc(33.33% - (2 * 10px)); }
-        .grid__column--desktop-4 *[class^="flex"] {
+        .grid__column--desktop-4 *[class^="grid__item"] {
           -ms-flex-preferred-size: calc(25% - (2 * 10px));
           flex-basis: calc(25% - (2 * 10px)); }
-        .grid__column--desktop-5 *[class^="flex"] {
+        .grid__column--desktop-5 *[class^="grid__item"] {
           -ms-flex-preferred-size: calc(20% - (2 * 10px));
           flex-basis: calc(20% - (2 * 10px)); }
-        .grid__column--desktop-6 *[class^="flex"] {
+        .grid__column--desktop-6 *[class^="grid__item"] {
           -ms-flex-preferred-size: calc(16.66% - (2 * 10px));
           flex-basis: calc(16.66% - (2 * 10px)); } }
   .grid__item {
