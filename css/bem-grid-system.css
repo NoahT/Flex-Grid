@@ -10,6 +10,10 @@ target devices greater than the specified
 size.
 */
 /**
+Graceful degradation mixin designed to
+target devices less than the specified size.
+*/
+/**
 grid and gutter size between
 elements
 */
@@ -65,8 +69,12 @@ grid class used as block
     /**
     .grid__column--desktop-[1-6]
     desktop modifier used to target large devices
+    */
+    /**
+    .grid__column--hidden-[phone,tablet, desktop]
+    set column display to hidden
     */ }
-    @media (min-width: 20em) {
+    @media (max-width: 30em) {
       .grid__column--phone {
         /**
         .grid__column--[phone,tablet,desktop]-1
@@ -198,6 +206,29 @@ grid class used as block
         .grid__column--desktop-6 *[class^="grid__item"] {
           -ms-flex-preferred-size: calc(16.66% - (2 * 10px));
           flex-basis: calc(16.66% - (2 * 10px)); } }
+    .grid__column--hidden- {
+      /**
+      .grid__column--hidden-phone
+      set column display to hidden for phone devices
+      */
+      /**
+      .grid__column--hidden-tablet
+      set column display to hidden for tablet devices
+      */
+      /**
+      .grid__column--hidden-desktop
+      set column display to hidden for desktop devices
+      */ }
+      @media (max-width: 30em) {
+        .grid__column--hidden-phone {
+          display: none; } }
+@media (min-width: 30em) and (max-width: 45em) {
+  .grid__column--hidden-tablet {
+    display: none; } }
+
+      @media (min-width: 45em) {
+        .grid__column--hidden-desktop {
+          display: none; } }
   .grid__item {
     border: 2px solid #000;
     margin-left: 10px;
