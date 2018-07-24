@@ -111,7 +111,7 @@ grid class used as block
     phone modifier used to target small devices
     */
     @include modifier("phone") {
-      @include minwidth($breakpoint-phone) {
+      @include maxwidth($breakpoint-tablet) {
         @include columns;
       }
     }
@@ -134,6 +134,44 @@ grid class used as block
       @include minwidth($breakpoint-desktop) {
         @include columns;
       }
+    }
+
+    /**
+    .grid__column--hidden-[phone,tablet, desktop]
+    set column display to hidden
+    */
+    @include modifier("hidden-") {
+      /**
+      .grid__column--hidden-phone
+      set column display to hidden for phone devices
+      */
+      &phone {
+        @include maxwidth($breakpoint-tablet) {
+          display: none;
+        }
+      }
+      /**
+      .grid__column--hidden-tablet
+      set column display to hidden for tablet devices
+      */
+      &tablet {
+        @include minwidth($breakpoint-tablet) {
+          @include maxwidth($breakpoint-desktop) {
+            display: none;
+          }
+        }
+      }
+
+      /**
+      .grid__column--hidden-desktop
+      set column display to hidden for desktop devices
+      */
+      &desktop {
+        @include minwidth($breakpoint-desktop) {
+          display: none;
+        }
+      }
+
     }
   }
 
