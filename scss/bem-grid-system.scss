@@ -93,13 +93,52 @@ grid class used as block
   margin: auto;
   margin-bottom: $gutter-size;
   
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+
+  /**
+  .grid--row
+  set the flex direction to row
+  */
+  @include modifier("row") {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  /**
+  .grid--row-reverse
+  set the flex direction to row-reverse
+  */
+  @include modifier("row-reverse") {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+
+  /**
+  .grid--column
+  set the flex direction to column
+  */
+  @include modifier("column") {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  /**
+  .grid--column-reverse
+  set the flex direction to column-reverse
+  */
+  @include modifier("column-reverse") {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
 
   /**
   .grid__column
