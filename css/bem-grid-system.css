@@ -41,12 +41,24 @@ grid class used as block
   max-width: 1200px;
   margin: auto;
   margin-bottom: 10px;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  /**
+  .grid--row
+  set the flex direction to row
+  */
+  /**
+  .grid--row-reverse
+  set the flex direction to row-reverse
+  */
+  /**
+  .grid--column
+  set the flex direction to column
+  */
+  /**
+  .grid--column-reverse
+  set the flex direction to column-reverse
+  */
   /**
   .grid__column
   column element used to add column behavior
@@ -57,6 +69,26 @@ grid class used as block
   remaining space should be allocated to
   each item in grid
   */ }
+  .grid--row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row; }
+  .grid--row-reverse {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse; }
+  .grid--column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .grid--column-reverse {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse; }
   .grid__column {
     /**
     .grid__column--phone-[1-6]
