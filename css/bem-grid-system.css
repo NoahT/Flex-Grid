@@ -1,38 +1,9 @@
-/**
-BEM mixin used for elements
-*/
-/**
-BEM mixin used for modifiers
-*/
-/**
-Progressive enhancement mixin designed to
-target devices greater than the specified
-size.
-*/
-/**
-Graceful degradation mixin designed to
-target devices less than the specified size.
-*/
-/**
-grid and gutter size between
-elements
-*/
-/**
-breakpoints for responsive design
-*/
-/**
-builder mixin used for column
-creation
-*/
 *,
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-/**
-grid class used as block
-*/
 .grid {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -42,33 +13,7 @@ grid class used as block
   margin: auto;
   margin-bottom: 10px;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  /**
-  .grid--row
-  set the flex direction to row
-  */
-  /**
-  .grid--row-reverse
-  set the flex direction to row-reverse
-  */
-  /**
-  .grid--column
-  set the flex direction to column
-  */
-  /**
-  .grid--column-reverse
-  set the flex direction to column-reverse
-  */
-  /**
-  .grid__column
-  column element used to add column behavior
-  */
-  /**
-  .grid__item
-  item element used to determine how much
-  remaining space should be allocated to
-  each item in grid
-  */ }
+  flex-wrap: wrap; }
   .grid--row {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -89,197 +34,82 @@ grid class used as block
     -webkit-box-direction: reverse;
     -ms-flex-direction: column-reverse;
     flex-direction: column-reverse; }
-  .grid__column {
-    /**
-    .grid__column--phone-[1-6]
-    phone modifier used to target small devices
-    */
-    /**
-    .grid__column--tablet-[1-6]
-    tablet modifier used to target medium devices
-    */
-    /**
-    .grid__column--desktop-[1-6]
-    desktop modifier used to target large devices
-    */
-    /**
-    .grid__column--hidden-[phone,tablet, desktop]
-    set column display to hidden
-    */ }
-    @media (max-width: 30em) {
-      .grid__column--phone {
-        /**
-        .grid__column--[phone,tablet,desktop]-1
-        one column layout
-        */
-        /**
-        .grid__column--[phone,tablet,desktop]-2
-        two column layout
-        */
-        /**
-        .grid__column--[phone,tablet,desktop]-3
-        three column layout
-        */
-        /**
-        .grid__column--[phone,tablet,desktop]-4
-        four column layout
-        */
-        /**
-        .grid__column--[phone,tablet,desktop]-5
-        five column layout
-        */
-        /**
-        .grid__column--[phone,tablet,desktop]-6
-        six column layout
-        */ }
-        .grid__column--phone-1 *[class^="grid__item"] {
-          -ms-flex-preferred-size: 100%;
-          flex-basis: 100%; }
-        .grid__column--phone-2 *[class^="grid__item"] {
-          -ms-flex-preferred-size: calc(50% - (2 * 10px));
-          flex-basis: calc(50% - (2 * 10px)); }
-        .grid__column--phone-3 *[class^="grid__item"] {
-          -ms-flex-preferred-size: calc(33.33% - (2 * 10px));
-          flex-basis: calc(33.33% - (2 * 10px)); }
-        .grid__column--phone-4 *[class^="grid__item"] {
-          -ms-flex-preferred-size: calc(25% - (2 * 10px));
-          flex-basis: calc(25% - (2 * 10px)); }
-        .grid__column--phone-5 *[class^="grid__item"] {
-          -ms-flex-preferred-size: calc(20% - (2 * 10px));
-          flex-basis: calc(20% - (2 * 10px)); }
-        .grid__column--phone-6 *[class^="grid__item"] {
-          -ms-flex-preferred-size: calc(16.66% - (2 * 10px));
-          flex-basis: calc(16.66% - (2 * 10px)); } }
-    @media (min-width: 30em) {
-      .grid__column--tablet {
-        /**
-        .grid__column--[phone,tablet,desktop]-1
-        one column layout
-        */
-        /**
-        .grid__column--[phone,tablet,desktop]-2
-        two column layout
-        */
-        /**
-        .grid__column--[phone,tablet,desktop]-3
-        three column layout
-        */
-        /**
-        .grid__column--[phone,tablet,desktop]-4
-        four column layout
-        */
-        /**
-        .grid__column--[phone,tablet,desktop]-5
-        five column layout
-        */
-        /**
-        .grid__column--[phone,tablet,desktop]-6
-        six column layout
-        */ }
-        .grid__column--tablet-1 *[class^="grid__item"] {
-          -ms-flex-preferred-size: 100%;
-          flex-basis: 100%; }
-        .grid__column--tablet-2 *[class^="grid__item"] {
-          -ms-flex-preferred-size: calc(50% - (2 * 10px));
-          flex-basis: calc(50% - (2 * 10px)); }
-        .grid__column--tablet-3 *[class^="grid__item"] {
-          -ms-flex-preferred-size: calc(33.33% - (2 * 10px));
-          flex-basis: calc(33.33% - (2 * 10px)); }
-        .grid__column--tablet-4 *[class^="grid__item"] {
-          -ms-flex-preferred-size: calc(25% - (2 * 10px));
-          flex-basis: calc(25% - (2 * 10px)); }
-        .grid__column--tablet-5 *[class^="grid__item"] {
-          -ms-flex-preferred-size: calc(20% - (2 * 10px));
-          flex-basis: calc(20% - (2 * 10px)); }
-        .grid__column--tablet-6 *[class^="grid__item"] {
-          -ms-flex-preferred-size: calc(16.66% - (2 * 10px));
-          flex-basis: calc(16.66% - (2 * 10px)); } }
-    @media (min-width: 45em) {
-      .grid__column--desktop {
-        /**
-        .grid__column--[phone,tablet,desktop]-1
-        one column layout
-        */
-        /**
-        .grid__column--[phone,tablet,desktop]-2
-        two column layout
-        */
-        /**
-        .grid__column--[phone,tablet,desktop]-3
-        three column layout
-        */
-        /**
-        .grid__column--[phone,tablet,desktop]-4
-        four column layout
-        */
-        /**
-        .grid__column--[phone,tablet,desktop]-5
-        five column layout
-        */
-        /**
-        .grid__column--[phone,tablet,desktop]-6
-        six column layout
-        */ }
-        .grid__column--desktop-1 *[class^="grid__item"] {
-          -ms-flex-preferred-size: 100%;
-          flex-basis: 100%; }
-        .grid__column--desktop-2 *[class^="grid__item"] {
-          -ms-flex-preferred-size: calc(50% - (2 * 10px));
-          flex-basis: calc(50% - (2 * 10px)); }
-        .grid__column--desktop-3 *[class^="grid__item"] {
-          -ms-flex-preferred-size: calc(33.33% - (2 * 10px));
-          flex-basis: calc(33.33% - (2 * 10px)); }
-        .grid__column--desktop-4 *[class^="grid__item"] {
-          -ms-flex-preferred-size: calc(25% - (2 * 10px));
-          flex-basis: calc(25% - (2 * 10px)); }
-        .grid__column--desktop-5 *[class^="grid__item"] {
-          -ms-flex-preferred-size: calc(20% - (2 * 10px));
-          flex-basis: calc(20% - (2 * 10px)); }
-        .grid__column--desktop-6 *[class^="grid__item"] {
-          -ms-flex-preferred-size: calc(16.66% - (2 * 10px));
-          flex-basis: calc(16.66% - (2 * 10px)); } }
-    .grid__column--hidden- {
-      /**
-      .grid__column--hidden-phone
-      set column display to hidden for phone devices
-      */
-      /**
-      .grid__column--hidden-tablet
-      set column display to hidden for tablet devices
-      */
-      /**
-      .grid__column--hidden-desktop
-      set column display to hidden for desktop devices
-      */ }
-      @media (max-width: 30em) {
-        .grid__column--hidden-phone {
-          display: none; } }
+  @media (max-width: 30em) {
+    .grid__column--phone-1 *[class^="grid__item"] {
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%; }
+    .grid__column--phone-2 *[class^="grid__item"] {
+      -ms-flex-preferred-size: calc(50% - (2 * 10px));
+      flex-basis: calc(50% - (2 * 10px)); }
+    .grid__column--phone-3 *[class^="grid__item"] {
+      -ms-flex-preferred-size: calc(33.33% - (2 * 10px));
+      flex-basis: calc(33.33% - (2 * 10px)); }
+    .grid__column--phone-4 *[class^="grid__item"] {
+      -ms-flex-preferred-size: calc(25% - (2 * 10px));
+      flex-basis: calc(25% - (2 * 10px)); }
+    .grid__column--phone-5 *[class^="grid__item"] {
+      -ms-flex-preferred-size: calc(20% - (2 * 10px));
+      flex-basis: calc(20% - (2 * 10px)); }
+    .grid__column--phone-6 *[class^="grid__item"] {
+      -ms-flex-preferred-size: calc(16.66% - (2 * 10px));
+      flex-basis: calc(16.66% - (2 * 10px)); } }
+  @media (min-width: 30em) {
+    .grid__column--tablet-1 *[class^="grid__item"] {
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%; }
+    .grid__column--tablet-2 *[class^="grid__item"] {
+      -ms-flex-preferred-size: calc(50% - (2 * 10px));
+      flex-basis: calc(50% - (2 * 10px)); }
+    .grid__column--tablet-3 *[class^="grid__item"] {
+      -ms-flex-preferred-size: calc(33.33% - (2 * 10px));
+      flex-basis: calc(33.33% - (2 * 10px)); }
+    .grid__column--tablet-4 *[class^="grid__item"] {
+      -ms-flex-preferred-size: calc(25% - (2 * 10px));
+      flex-basis: calc(25% - (2 * 10px)); }
+    .grid__column--tablet-5 *[class^="grid__item"] {
+      -ms-flex-preferred-size: calc(20% - (2 * 10px));
+      flex-basis: calc(20% - (2 * 10px)); }
+    .grid__column--tablet-6 *[class^="grid__item"] {
+      -ms-flex-preferred-size: calc(16.66% - (2 * 10px));
+      flex-basis: calc(16.66% - (2 * 10px)); } }
+  @media (min-width: 45em) {
+    .grid__column--desktop-1 *[class^="grid__item"] {
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%; }
+    .grid__column--desktop-2 *[class^="grid__item"] {
+      -ms-flex-preferred-size: calc(50% - (2 * 10px));
+      flex-basis: calc(50% - (2 * 10px)); }
+    .grid__column--desktop-3 *[class^="grid__item"] {
+      -ms-flex-preferred-size: calc(33.33% - (2 * 10px));
+      flex-basis: calc(33.33% - (2 * 10px)); }
+    .grid__column--desktop-4 *[class^="grid__item"] {
+      -ms-flex-preferred-size: calc(25% - (2 * 10px));
+      flex-basis: calc(25% - (2 * 10px)); }
+    .grid__column--desktop-5 *[class^="grid__item"] {
+      -ms-flex-preferred-size: calc(20% - (2 * 10px));
+      flex-basis: calc(20% - (2 * 10px)); }
+    .grid__column--desktop-6 *[class^="grid__item"] {
+      -ms-flex-preferred-size: calc(16.66% - (2 * 10px));
+      flex-basis: calc(16.66% - (2 * 10px)); } }
+  @media (max-width: 30em) {
+    .grid__column--hidden-phone {
+      display: none; } }
 @media (min-width: 30em) and (max-width: 45em) {
   .grid__column--hidden-tablet {
     display: none; } }
 
-      @media (min-width: 45em) {
-        .grid__column--hidden-desktop {
-          display: none; } }
+  @media (min-width: 45em) {
+    .grid__column--hidden-desktop {
+      display: none; } }
   .grid__item {
-    border: 2px solid #000;
     margin-left: 10px;
-    margin-right: 10px;
-    /**
-    .grid__item--0
-    */
-    /**
-    .grid__item--1
-    */
-    /**
-    .grid__item--2
-    */
-    /**
-    .grid__item--3
-    */
-    /**
-    .grid__item--4
-    */ }
+    margin-right: 10px; }
+    .grid__item--left {
+      text-align: left; }
+    .grid__item--center {
+      text-align: center; }
+    .grid__item--right {
+      text-align: right; }
     .grid__item--0 {
       -webkit-box-flex: 0;
       -ms-flex: 0;
