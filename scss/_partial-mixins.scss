@@ -1,36 +1,28 @@
-/**
-BEM mixin used for elements
-*/
+/// BEM mixin used for elements
 @mixin element($element) {
   &__#{$element} {
     @content;
   }
 }
 
-/**
-BEM mixin used for modifiers
-*/
+/// BEM mixin used for modifiers
 @mixin modifier($modifier) {
   &--#{$modifier} {
     @content;
   }
 }
 
-/**
-Progressive enhancement mixin designed to
-target devices greater than the specified
-size.
-*/
+/// Progressive enhancement mixin designed to
+/// target devices greater than the specified
+/// size.
 @mixin minwidth($minw) {
   @media (min-width: ($minw/16+em)) {
     @content;
   }
 }
 
-/**
-Graceful degradation mixin designed to
-target devices less than the specified size.
-*/
+/// Graceful degradation mixin designed to
+/// target devices less than the specified size.
 @mixin maxwidth($maxw) {
   @media (max-width: ($maxw/16+em)) {
     @content;
