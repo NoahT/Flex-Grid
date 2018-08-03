@@ -1,0 +1,28 @@
+{
+  "name": "scss-flexbox-grid",
+  "version": "1.0.1",
+  "description": "Flexbox-based grid system for responsive design.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoahT/Flex-Grid.git"
+  },
+  "keywords": [
+    "flexbox",
+    "grid",
+    "responsive",
+    "design",
+    "scss"
+  ],
+  "author": "noah-teshima <noah.teshima@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NoahT/Flex-Grid/issues"
+  },
+  "homepage": "https://github.com/NoahT/Flex-Grid#readme"
+}
