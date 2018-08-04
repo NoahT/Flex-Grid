@@ -4,7 +4,16 @@
   "description": "Flexbox-based grid system for responsive design.",
   "main": "index.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.1.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "postcss-scss": "^2.0.0",
+    "run-sequence": "^2.2.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,3 +35,5 @@
   },
   "homepage": "https://github.com/NoahT/Flex-Grid#readme"
 }
+
+
