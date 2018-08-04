@@ -1,0 +1,9 @@
+#demo folder
+demo
+
+#node modules folder
+node_modules/
+
+#cached sass folder
+.sass-cache/
+
