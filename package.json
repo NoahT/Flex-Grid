@@ -1,6 +1,6 @@
 {
   "name": "scss-flexbox-grid",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Flexbox-based grid system for responsive design.",
   "main": "index.js",
   "dependencies": {},
@@ -35,5 +35,3 @@
   },
   "homepage": "https://github.com/NoahT/Flex-Grid#readme"
 }
-
-
