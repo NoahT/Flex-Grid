@@ -21,6 +21,15 @@
   }
 }
 
+/// Progressive enhancement mixin designed to
+/// target devices greater than the specified
+/// size.
+@mixin minheight($minw) {
+  @media (min-height: ($minw/16+em)) {
+    @content;
+  }
+}
+
 /// Graceful degradation mixin designed to
 /// target devices less than the specified size.
 @mixin maxwidth($maxw) {
@@ -29,7 +38,13 @@
   }
 }
 
-
+/// Graceful degradation mixin designed to
+/// target devices less than the specified size.
+@mixin maxheight($maxw) {
+  @media (max-height: ($maxw/16+em)) {
+    @content;
+  }
+}
 
 
 
