@@ -5,59 +5,53 @@
 /// builder mixin used for column creation
 /// @author Noah Teshima
 /// @alias shorthand
-@mixin columns {
+@mixin max_items {
 
-  /// .grid__column--[phone,tablet,desktop]-1
   /// one column layout
   &-1 {
     *[class^="grid__item"] {
       -ms-flex-preferred-size: 100%;
-          flex-basis: 100%;
+      flex-basis: 100%;
     }
   }
 
-  /// .grid__column--[phone,tablet,desktop]-2
   /// two column layout
   &-2 {
     *[class^="grid__item"] {
       -ms-flex-preferred-size: calc(50% - (2 * #{$gutter-size}));
-          flex-basis: calc(50% - (2 * #{$gutter-size}));
+      flex-basis: calc(50% - (2 * #{$gutter-size}));
     }
   }
 
-  /// .grid__column--[phone,tablet,desktop]-3
   /// three column layout
   &-3 {
     *[class^="grid__item"] {
       -ms-flex-preferred-size: calc(33.33% - (2 * #{$gutter-size}));
-          flex-basis: calc(33.33% - (2 * #{$gutter-size}));
+      flex-basis: calc(33.33% - (2 * #{$gutter-size}));
     }
   }
 
-  /// .grid__column--[phone,tablet,desktop]-4
   /// four column layout
   &-4 {
     *[class^="grid__item"] {
       -ms-flex-preferred-size: calc(25% - (2 * #{$gutter-size}));
-          flex-basis: calc(25% - (2 * #{$gutter-size}));
+      flex-basis: calc(25% - (2 * #{$gutter-size}));
     }
   }
 
-  /// .grid__column--[phone,tablet,desktop]-5
   /// five column layout
   &-5 {
     *[class^="grid__item"] {
       -ms-flex-preferred-size: calc(20% - (2 * #{$gutter-size}));
-          flex-basis: calc(20% - (2 * #{$gutter-size}));
+      flex-basis: calc(20% - (2 * #{$gutter-size}));
     }
   }
 
-  /// .grid__column--[phone,tablet,desktop]-6
   /// six column layout
   &-6 {
     *[class^="grid__item"] {
       -ms-flex-preferred-size: calc(16.66% - (2 * #{$gutter-size}));
-          flex-basis: calc(16.66% - (2 * #{$gutter-size}));
+      flex-basis: calc(16.66% - (2 * #{$gutter-size}));
     }
   }
 }
@@ -66,29 +60,36 @@
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /// grid class used as block
 .grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-
+  //display: -webkit-box;
+  //display: -ms-flexbox;
+  //display: flex;
+  //width: 100%;
+  //margin-bottom: $gutter-size;
   width: 100%;
   max-width: $grid-size;
   margin: auto;
-  margin-bottom: $gutter-size;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 
   /// .grid--row
   /// set the flex direction to row
   @include modifier("row") {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 
   /// .grid--row-reverse
@@ -96,8 +97,15 @@
   @include modifier("row-reverse") {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 
   /// .grid--column
@@ -105,8 +113,15 @@
   @include modifier("column") {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 
   /// .grid--column-reverse
@@ -114,8 +129,45 @@
   @include modifier("column-reverse") {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  /// .grid--hidden-[phone,tablet, desktop]
+  /// set display to hidden
+  @include modifier("hidden-") {
+    /// .grid--hidden-phone
+    /// set display to hidden for phone devices
+    &phone {
+      @include maxwidth($breakpoint-tablet) {
+        display: none;
+      }
+    }
+
+    /// .grid--hidden-tablet
+    ///set display to hidden for tablet devices
+    &tablet {
+      @include minwidth($breakpoint-tablet) {
+        @include maxwidth($breakpoint-desktop) {
+          display: none;
+        }
+      }
+    }
+
+    /// .grid--hidden-desktop
+    /// set display to hidden for desktop devices
+    &desktop {
+      @include minwidth($breakpoint-desktop) {
+        display: none;
+      }
+    }
   }
 
   /// .grid__column
@@ -126,7 +178,7 @@
     /// phone modifier used to target small devices
     @include modifier("phone") {
       @include maxwidth($breakpoint-tablet) {
-        @include columns;
+        @include max_items;
       }
     }
 
@@ -134,7 +186,7 @@
     /// tablet modifier used to target medium devices
     @include modifier("tablet") {
       @include minwidth($breakpoint-tablet) {
-        @include columns;
+        @include max_items;
       }
     }
 
@@ -142,39 +194,37 @@
     /// desktop modifier used to target large devices
     @include modifier("desktop") {
       @include minwidth($breakpoint-desktop) {
-        @include columns;
+        @include max_items;
+      }
+    }
+  }
+
+  /// .grid__row
+  /// row element used to add row behavior
+  @include element("row") {
+
+    /// .grid__row--phone-[1-6]
+    /// phone modifier used to target small devices
+    @include modifier("phone") {
+      @include maxwidth($breakpoint-tablet) {
+        @include max_items;
       }
     }
 
-    /// .grid__column--hidden-[phone,tablet, desktop]
-    /// set column display to hidden
-    @include modifier("hidden-") {
-      /// .grid__column--hidden-phone
-      /// set column display to hidden for phone devices
-      &phone {
-        @include maxwidth($breakpoint-tablet) {
-          display: none;
-        }
+    /// .grid__row--tablet-[1-6]
+    /// tablet modifier used to target medium devices
+    @include modifier("tablet") {
+      @include minwidth($breakpoint-tablet) {
+        @include max_items;
       }
+    }
 
-      /// .grid__column--hidden-tablet
-      ///set column display to hidden for tablet devices
-      &tablet {
-        @include minwidth($breakpoint-tablet) {
-          @include maxwidth($breakpoint-desktop) {
-            display: none;
-          }
-        }
+    /// .grid__row--desktop-[1-6]
+    /// desktop modifier used to target large devices
+    @include modifier("desktop") {
+      @include minwidth($breakpoint-desktop) {
+        @include max_items;
       }
-
-      /// .grid__column--hidden-desktop
-      /// set column display to hidden for desktop devices
-      &desktop {
-        @include minwidth($breakpoint-desktop) {
-          display: none;
-        }
-      }
-
     }
   }
 
@@ -207,36 +257,36 @@
     /// .grid__item--0
     @include modifier("0") {
       -webkit-box-flex: 0;
-          -ms-flex: 0;
-              flex: 0;
+      -ms-flex: 0;
+      flex: 0;
     }
 
     /// .grid__item--1
     @include modifier("1") {
       -webkit-box-flex: 1;
-          -ms-flex: 1;
-              flex: 1;
+      -ms-flex: 1;
+      flex: 1;
     }
 
     /// .grid__item--2
     @include modifier("2") {
       -webkit-box-flex: 2;
-          -ms-flex: 2;
-              flex: 2;
+      -ms-flex: 2;
+      flex: 2;
     }
 
     /// .grid__item--3
     @include modifier("3") {
       -webkit-box-flex: 3;
-          -ms-flex: 3;
-              flex: 3;
+      -ms-flex: 3;
+      flex: 3;
     }
 
     /// .grid__item--4
     @include modifier("4") {
       -webkit-box-flex: 4;
-          -ms-flex: 4;
-              flex: 4;
+      -ms-flex: 4;
+      flex: 4;
     }
   }
 }
