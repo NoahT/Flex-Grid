@@ -30,6 +30,11 @@ npm i --save scss-flexbox-grid
 
 After installing, link the compiled CSS file (from the root directory) `./css/bem-grid-system.css` to any HTML files in order to use it.
 
+## Documentation
+
+
+Documentation on using Flex-Grid can be found [here](https://github.com/NoahT/Flex-Grid/wiki/Usage).
+
 ## Contributing/Issues
 
 
