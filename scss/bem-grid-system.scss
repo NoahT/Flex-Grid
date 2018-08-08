@@ -64,7 +64,7 @@
 }
 
 /// grid class used as block
-.grid {
+@include block("grid") {
   //display: -webkit-box;
   //display: -ms-flexbox;
   //display: flex;
@@ -78,7 +78,7 @@
 
   /// .grid--row
   /// set the flex direction to row
-  @include modifier("row") {
+  @include element("row") {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
@@ -94,7 +94,7 @@
 
   /// .grid--row-reverse
   /// set the flex direction to row-reverse
-  @include modifier("row-reverse") {
+  @include element("row-reverse") {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
     -ms-flex-direction: row-reverse;
@@ -110,7 +110,7 @@
 
   /// .grid--column
   /// set the flex direction to column
-  @include modifier("column") {
+  @include element("column") {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -126,7 +126,7 @@
 
   /// .grid--column-reverse
   /// set the flex direction to column-reverse
-  @include modifier("column-reverse") {
+  @include element("column-reverse") {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
     -ms-flex-direction: column-reverse;
@@ -242,10 +242,20 @@
       text-align: left;
     }
 
-    /// .grid__item--center
-    /// align text to center of flex item
-    @include modifier("center") {
-      text-align: center;
+    /// .grid__item--center-horizontal
+    /// align content to center of flex item horiztonally
+    @include modifier("center-horizontal") {
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /// .grid__item--center-vertical
+    /// align content to center of flex item vertically
+    @include modifier("center-vertical") {
+      display: table;
+      margin-top: auto;
+      margin-bottom: auto;
     }
 
     /// .grid__item--right

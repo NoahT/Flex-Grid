@@ -1,9 +1,13 @@
-#demo folder
-demo
+#documentation folder
+docs/
 
 #node modules folder
 node_modules/
 
 #cached sass folder
 .sass-cache/
+
+#debug log
+npm-debug.log
+
 
