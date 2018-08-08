@@ -1,3 +1,10 @@
+/// BEM mixin used for blocks
+@mixin block($block) {
+  &.#{$block} {
+    @content;
+  }
+}
+
 /// BEM mixin used for elements
 @mixin element($element) {
   &__#{$element} {
