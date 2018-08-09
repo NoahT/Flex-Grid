@@ -2,9 +2,7 @@
 @import 'partial-vars';
 
 
-/// builder mixin used for column creation
-/// @author Noah Teshima
-/// @alias shorthand
+/// mixin used for column creation
 @mixin max_items {
 
   /// one column layout
@@ -65,18 +63,14 @@
 
 /// grid class used as block
 @include block("grid") {
-  //display: -webkit-box;
-  //display: -ms-flexbox;
-  //display: flex;
-  //width: 100%;
-  //margin-bottom: $gutter-size;
   width: 100%;
+  height: 100%;
   max-width: $grid-size;
   margin: auto;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 
-  /// .grid--row
+  /// .grid__row
   /// set the flex direction to row
   @include element("row") {
     -webkit-box-orient: horizontal;
@@ -92,7 +86,7 @@
     flex-wrap: wrap;
   }
 
-  /// .grid--row-reverse
+  /// .grid__row-reverse
   /// set the flex direction to row-reverse
   @include element("row-reverse") {
     -webkit-box-orient: horizontal;
@@ -108,7 +102,7 @@
     flex-wrap: wrap;
   }
 
-  /// .grid--column
+  /// .grid__column
   /// set the flex direction to column
   @include element("column") {
     -webkit-box-orient: vertical;
@@ -124,7 +118,7 @@
     flex-wrap: wrap;
   }
 
-  /// .grid--column-reverse
+  /// .grid__column-reverse
   /// set the flex direction to column-reverse
   @include element("column-reverse") {
     -webkit-box-orient: vertical;
@@ -177,7 +171,7 @@
     /// .grid__column--phone-[1-6]
     /// phone modifier used to target small devices
     @include modifier("phone") {
-      @include maxwidth($breakpoint-tablet) {
+      @include minwidth($breakpoint-phone) {
         @include max_items;
       }
     }
@@ -206,7 +200,7 @@
     /// .grid__row--phone-[1-6]
     /// phone modifier used to target small devices
     @include modifier("phone") {
-      @include maxwidth($breakpoint-tablet) {
+      @include minwidth($breakpoint-phone) {
         @include max_items;
       }
     }
@@ -237,9 +231,15 @@
     margin-right: $gutter-size;
 
     /// .grid__item--left
-    /// align text to right side of flex item
+    /// align item to left 
     @include modifier("left") {
       text-align: left;
+    }
+
+    /// .grid__item--right
+    /// align item to right
+    @include modifier("right") {
+      text-align: right;
     }
 
     /// .grid__item--center-horizontal
@@ -258,11 +258,6 @@
       margin-bottom: auto;
     }
 
-    /// .grid__item--right
-    /// align text to right of flex item
-    @include modifier("right") {
-      text-align: right;
-    }
 
     /// .grid__item--0
     @include modifier("0") {
