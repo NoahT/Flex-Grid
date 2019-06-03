@@ -6,9 +6,10 @@ Flex-Grid is an SCSS framework with the purpose of simplifying responsive design
 ## Usage
 
 
-There are currently two ways to support Flex-Grid in your projects:
+There are currently three ways to support Flex-Grid in your projects:
 * Clone the repository
 * Download the node module
+* Github releases
 
 ### Clone the repository
 
@@ -29,6 +30,11 @@ npm i --save scss-flexbox-grid
 ````
 
 After installing, link the compiled CSS file (from the root directory) `./css/bem-grid-system.css` to any HTML files in order to use it.
+
+### Github releases
+
+Alternatively, you may download one of the available releases found [here](https://github.com/NoahT/Flex-Grid/releases). Included
+is a minified .css file, which should be referenced in any relevant project.
 
 ## Documentation
 
